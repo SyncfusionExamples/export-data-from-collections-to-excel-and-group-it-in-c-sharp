@@ -22,7 +22,7 @@ namespace ImportNestedCollection
     public class BrandObject
     {
         public string BrandName { get; set; }
-        public string VahicleType { get; set; }
+        public string VehicleType { get; set; }
         public string ModelName { get; set; }
     }
 

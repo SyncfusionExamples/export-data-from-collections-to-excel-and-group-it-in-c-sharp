@@ -130,7 +130,7 @@ namespace ImportNestedCollection
             //Initialize parent collection to add data from XML file.
             List<Brand> list = new List<Brand>();
             string brandName = brands.BrandObject[0].BrandName;
-            string vehicleType = brands.BrandObject[0].VahicleType;
+            string vehicleType = brands.BrandObject[0].VehicleType;
             string modelName = brands.BrandObject[0].ModelName;
 
             //Parent class
@@ -148,30 +148,30 @@ namespace ImportNestedCollection
             {
                 if (brandName == brandObj.BrandName)
                 {
-                    if (vehicleType == brandObj.VahicleType)
+                    if (vehicleType == brandObj.VehicleType)
                     {
                         vehicle.Models.Add(new Model(brandObj.ModelName));
                         continue;
                     }
                     else
                     {
-                        vehicle = new VehicleType(brandObj.VahicleType);
+                        vehicle = new VehicleType(brandObj.VehicleType);
                         vehicle.Models = new List<Model>();
                         vehicle.Models.Add(new Model(brandObj.ModelName));
                         brand.VehicleTypes.Add(vehicle);
-                        vehicleType = brandObj.VahicleType;
+                        vehicleType = brandObj.VehicleType;
                     }
                     continue;
                 }
                 else
                 {
                     brand = new Brand(brandObj.BrandName);
-                    vehicle = new VehicleType(brandObj.VahicleType);
+                    vehicle = new VehicleType(brandObj.VehicleType);
                     vehicle.Models = new List<Model>();
                     vehicle.Models.Add(new Model(brandObj.ModelName));
                     brand.VehicleTypes = new List<VehicleType>();
                     brand.VehicleTypes.Add(vehicle);
-                    vehicleType = brandObj.VahicleType;
+                    vehicleType = brandObj.VehicleType;
                     list.Add(brand);
                     brandName = brandObj.BrandName;
                 }
